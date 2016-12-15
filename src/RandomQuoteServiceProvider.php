@@ -8,6 +8,8 @@ use Illuminate\Support\ServiceProvider;
  */
 class RandomQuoteServiceProvider extends ServiceProvider {
 
+    protected $vendorName = 'ronnyvo';
+
     protected $packageName = 'randomquote';
 
     protected $langPath = __DIR__.'/../lang';
@@ -23,7 +25,7 @@ class RandomQuoteServiceProvider extends ServiceProvider {
         $this->loadTranslationsFrom($this->langPath, $this->packageName);
 
         $this->publishes([
-            $this->langPath => resource_path('lang/vendor/'.$this->packageName),
+            $this->langPath => resource_path('lang/vendor/'.$this->vendorName.'/'.$this->packageName),
         ]);
 
 //        include __DIR__.'/../routes.php';
