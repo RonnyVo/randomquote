@@ -5,12 +5,14 @@ class RandomQuote {
     protected $langKey = 'ronnyvo/randomquote::randomquote.quotes';
 
     public function get($key) {
-        return $quotes = trans($this->langKey)[$key];
+        $quote = trans($this->langKey)[$key];
+        return new RandomQuoteItem($quote);
     }
 
     public function getRandom() {
         $quotes = trans($this->langKey);
-        return $quotes[array_rand($quotes)];
+        $quote = $quotes[array_rand($quotes)];
+        return new RandomQuoteItem($quote);
     }
     
 }
