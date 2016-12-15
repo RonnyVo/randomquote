@@ -9,7 +9,7 @@ class RandomQuoteItem {
         $this->data = $data;
     }
 
-    public function render($attributes) {
+    public function render($attributes = array()) {
 
         $data = $this->data;
 
@@ -28,21 +28,21 @@ class RandomQuoteItem {
 
         $renderedHtml = null;
 
-        $renderedHtml .= sprintf('<%w>',$attributes['wrapper_el']);
+        $renderedHtml .= sprintf('<%s>',$attributes['wrapper_el']);
 
         $contentClass = '';
         if (!empty($attributes['content_class'])) {
-            $contentClass = sprintf('class="%c"',implode(' ', $attributes['content_class']));
+            $contentClass = sprintf('class="%s"',implode(' ', $attributes['content_class']));
         }
-        $renderedHtml .= sprintf('<%e %c>%d</%e>',$attributes['content_el'], $contentClass, $dataContent);
+        $renderedHtml .= sprintf('<%s %s>%s</%s>',$attributes['content_el'], $contentClass, $dataContent, $attributes['content_el']);
 
         $authorClass = '';
         if (!empty($attributes['author_class'])) {
-            $authorClass = sprintf('class="%c"',implode(' ', $attributes['author_class']));
+            $authorClass = sprintf('class="%s"',implode(' ', $attributes['author_class']));
         }
-        $renderedHtml .= sprintf('<%e %c>%d</%e>',$attributes['author_el'], $authorClass, $dataAuthor);
+        $renderedHtml .= sprintf('<%s %s>%s</%s>',$attributes['author_el'], $authorClass, $dataAuthor, $attributes['author_el']);
 
-        $renderedHtml .= sprintf('</%w>',$attributes['wrapper_el']);
+        $renderedHtml .= sprintf('</%s>',$attributes['wrapper_el']);
 
         return $renderedHtml;
     }
