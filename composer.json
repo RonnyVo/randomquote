@@ -1,0 +1,25 @@
+{
+    "name": "ronnyvo/randomquote",
+    "description": "Randomly show famous quotes",
+    "keywords": [],
+    "homepage": "http://thegoodronny.com",
+    "authors": [
+        {
+            "name": "Nhan Chi Vo",
+            "email": "ronny.vo.7@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5"
+    },
+    "autoload": {
+       "psr-4": {
+         "RonnyVo\\RandomQuote\\": "src/"
+        }
+    },
+    "license": "MIT"
+    
+}
