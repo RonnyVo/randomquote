@@ -12,6 +12,8 @@ class RandomQuoteServiceProvider extends ServiceProvider {
 
     protected $packageName = 'randomquote';
 
+    protected $fullPackageName = 'ronnyvo/randomquote';
+
     protected $langPath = __DIR__.'/../lang';
 
     /**
@@ -26,7 +28,7 @@ class RandomQuoteServiceProvider extends ServiceProvider {
 
         $this->publishes([
             $this->langPath => resource_path('lang/vendor/'.$this->vendorName.'/'.$this->packageName),
-        ]);
+        ], $this->fullPackageName);
 
 //        include __DIR__.'/../routes.php';
 //
