@@ -14,7 +14,7 @@ class RandomQuoteServiceProvider extends ServiceProvider {
 
     protected $fullPackageName = 'ronnyvo/randomquote';
 
-    protected $langPath = __DIR__.'/../lang';
+    protected $langPath = __DIR__.'/lang';
 
     /**
      * Bootstrap the application services.
@@ -24,7 +24,7 @@ class RandomQuoteServiceProvider extends ServiceProvider {
     public function boot()
     {
 
-        $this->loadTranslationsFrom($this->langPath, $this->packageName);
+        $this->loadTranslationsFrom($this->langPath, $this->fullPackageName);
 
         $this->publishes([
             $this->langPath => resource_path('lang/vendor/'.$this->vendorName.'/'.$this->packageName),
